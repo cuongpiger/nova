@@ -86,7 +86,10 @@ information is injected into a VM.
 
 
 def register_opts(conf):
-    conf.register_opts(netconf_opts)
+    try:
+        conf.register_opts(netconf_opts)
+    except cfg.DuplicateOptError:
+        pass
 
 
 def list_opts():

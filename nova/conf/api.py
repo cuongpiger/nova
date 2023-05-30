@@ -415,8 +415,11 @@ API_OPTS = (auth_opts +
 
 
 def register_opts(conf):
-    conf.register_group(api_group)
-    conf.register_opts(API_OPTS, group=api_group)
+    try:
+        conf.register_group(api_group)
+        conf.register_opts(API_OPTS, group=api_group)
+    except cfg.DuplicateOptError:
+        pass
 
 
 def list_opts():

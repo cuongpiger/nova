@@ -53,7 +53,10 @@ Possible values:
 
 def register_opts(conf):
     conf.register_group(conductor_group)
-    conf.register_opts(ALL_OPTS, group=conductor_group)
+    try:
+        conf.register_opts(ALL_OPTS, group=conductor_group)
+    except cfg.DuplicateOptError:
+        pass
     conf.register_opts(migrate_opts)
 
 
