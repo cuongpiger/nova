@@ -58,3 +58,5 @@ def init():
                 'Nova uses the eventlet library to support async IO. This '
                 'could result in failures that do not occur under normal '
                 'operation. Use at your own risk.')
+
+    del nova.conf.CONF
