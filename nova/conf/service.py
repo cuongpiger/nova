@@ -161,10 +161,7 @@ Possible Values:
 
 
 def register_opts(conf):
-    try:
-        conf.register_opts(service_opts)
-    except cfg.DuplicateOptError:
-        pass
+    conf.register_opts(service_opts)
 
 
 def list_opts():

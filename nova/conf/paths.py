@@ -71,10 +71,7 @@ def state_path_def(*args):
 
 
 def register_opts(conf):
-    try:
-        conf.register_opts(ALL_OPTS)
-    except cfg.DuplicateOptError:
-        pass
+    conf.register_opts(ALL_OPTS)
 
 
 def list_opts():

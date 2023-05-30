@@ -64,10 +64,7 @@ entry.
 
 
 def register_opts(conf):
-    try:
-        conf.register_opts(base_options)
-    except cfg.DuplicateOptError:
-        pass
+    conf.register_opts(base_options)
 
 
 def list_opts():
